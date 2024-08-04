@@ -16,16 +16,16 @@ public class ATM {
 
     // Method to check and display the account balance
     public void checkBalance() {
-        System.out.println("Your current balance is: $" + balance); // Print the balance
-        transactionHistory.add("Checked balance: $" + balance);     // Record the balance check
+        System.out.println("Your current balance is: Rs." + balance); // Print the balance
+        transactionHistory.add("Checked balance: Rs." + balance);     // Record the balance check
     }
 
     // Method to withdraw cash from the account
     public void withdrawCash(double amount) {
         if (amount <= balance) { // Check if there's enough balance to withdraw
-            balance -= amount;   // Subtract the amount from balance
-            System.out.println("Successfully withdrew $" + amount); // Print success message
-            transactionHistory.add("Withdrew: $" + amount); // Record the withdrawal
+            balance= balance - amount;   // Subtract the amount from balance
+            System.out.println("Successfully withdrew Rs." + amount); // Print success message
+            transactionHistory.add("Withdrew:Rs." + amount); // Record the withdrawal
         } else {
             System.out.println("Insufficient balance."); // Print insufficient balance message
         }
@@ -34,8 +34,8 @@ public class ATM {
     // Method to deposit cash into the account
     public void depositCash(double amount) {
         balance += amount;   // Add the amount to balance
-        System.out.println("Successfully deposited $" + amount); // Print success message
-        transactionHistory.add("Deposited: $" + amount); // Record the deposit
+        System.out.println("Successfully deposited Rs." + amount); // Print success message
+        transactionHistory.add("Deposited: Rs." + amount); // Record the deposit
     }
 
     // Method to change the account PIN
@@ -53,14 +53,14 @@ public class ATM {
         }
     }
 
-    // Method to validate the entered PIN
+    // Method to validate entered PIN
     public boolean validatePin(String enteredPin) {
         return pin.equals(enteredPin); // Return true if entered PIN matches stored PIN
     }
 
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in); // Create a Scanner object to read input
-        ATM atm = new ATM(1000, "1234"); // Create a new ATM object with initial balance $1000 and PIN "1234"
+        Scanner scanner = new Scanner(System.in); //  Scanner object to read input
+        ATM atm = new ATM(1000, "1234"); // Create a new ATM object with initial balance Rs.1000 and PIN "1234"
 
         System.out.println("Welcome to the ATM Simulator!"); // Print welcome message
 
@@ -134,7 +134,7 @@ public class ATM {
 
                 case 6:
                     System.out.println("Thank you for using the ATM Simulator. Goodbye!"); // Print exit message
-                    scanner.close(); // Close the scanner
+                    scanner.close(); // Close the scanner object
                     return; // Exit the program
 
                 default:
