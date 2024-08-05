@@ -79,7 +79,7 @@ public class ATM {
 
             switch (choice) { // Handle user choice
                 case 1:
-                    System.out.println("Enter PIN:"); // Prompt for PIN
+                    System.out.println("Enter PIN:"); // asks for PIN
                     String pin = scanner.next(); // Read entered PIN
                     if (atm.validatePin(pin)) { // Validate the PIN
                         atm.checkBalance(); // Check and display balance if PIN is correct
@@ -92,7 +92,7 @@ public class ATM {
                     System.out.println("Enter PIN:"); // asks for PIN
                     pin = scanner.next(); // Read entered PIN
                     if (atm.validatePin(pin)) { // Validate the PIN
-                        System.out.println("Enter amount to withdraw:"); // Prompt for amount to withdraw
+                        System.out.println("Enter amount to withdraw:"); //asks for amount to withdraw
                         double amount = scanner.nextDouble(); // Read entered amount
                         atm.withdrawCash(amount); // Withdraw cash if PIN is correct
                     } else {
@@ -104,7 +104,7 @@ public class ATM {
                     System.out.println("Enter PIN:"); // asks for PIN
                     pin = scanner.next(); // Read entered PIN
                     if (atm.validatePin(pin)) { // Validate the PIN
-                        System.out.println("Enter amount to deposit:"); // Prompt for amount to deposit
+                        System.out.println("Enter amount to deposit:"); // asks for amount to deposit
                         double amount = scanner.nextDouble(); // Read entered amount
                         atm.depositCash(amount); // Deposit cash if PIN is correct
                     } else {
@@ -125,7 +125,7 @@ public class ATM {
                     break;
 
                 case 5:
-                    System.out.println("Enter PIN:"); // Prompt for PIN
+                    System.out.println("Enter PIN:"); // asks for PIN
                     pin = scanner.next(); // Read entered PIN
                     if (atm.validatePin(pin)) { // Validate the PIN
                         atm.showTransactionHistory(); // Show transaction history if PIN is correct
